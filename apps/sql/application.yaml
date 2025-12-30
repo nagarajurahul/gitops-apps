@@ -5,18 +5,32 @@ metadata:
   namespace: argocd
   labels:
     app.kubernetes.io/managed-by: argocd
+  annotations:
+
+
 spec:
-  destination:
-    namespace: db
-    server: https://kubernetes.default.svc
   project: default
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: db
+
   source:
-    path: sql
     repoURL: https://github.com/nagarajurahul/helm-charts
-    targetRevision: HEAD
+    targetRevision: main
+    path: sql
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
+    - PruneLast=true
+    - ApplyOutOfSyncOnly=true
+    retry:
+      limit: 3
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m

@@ -6,24 +6,27 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: argocd
   annotations:
-    
+
 spec:
-  destination:
-    namespace: quotes-app-nodejs
-    server: https://kubernetes.default.svc
   project: default
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: quotes-app-nodejs
+
   source:
-    path: quotes-app-nodejs
     repoURL: https://github.com/nagarajurahul/helm-charts
     targetRevision: main
+    path: quotes-app-nodejs
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
-    - PruneLast=true
-    - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
+      - PruneLast=true
+      - ApplyOutOfSyncOnly=true
     retry:
       limit: 3
       backoff:

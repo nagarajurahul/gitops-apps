@@ -15,7 +15,7 @@ spec:
   source:
     path: quotes-app-nodejs
     repoURL: https://github.com/nagarajurahul/helm-charts
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true

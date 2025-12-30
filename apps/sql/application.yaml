@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/managed-by: argocd
   annotations:
 
-
 spec:
   project: default
 
@@ -25,9 +24,9 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
-    - PruneLast=true
-    - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
+      - PruneLast=true
+      - ApplyOutOfSyncOnly=true
     retry:
       limit: 3
       backoff:

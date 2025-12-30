@@ -14,14 +14,14 @@ metadata:
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/github-ssh-creds
     argocd-image-updater.argoproj.io/write-back-target-branch: main
 spec:
-  destination:
-    namespace: ci-cd-app
-    server: https://kubernetes.default.svc
   project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ci-cd-app
   source:
-    path: ci-cd-app
     repoURL: https://github.com/nagarajurahul/helm-charts
-    targetRevision: HEAD
+    targetRevision: main
+    path: ci-cd-app
   syncPolicy:
     automated:
       prune: true

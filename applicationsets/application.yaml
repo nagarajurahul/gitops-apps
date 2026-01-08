@@ -17,6 +17,9 @@ spec:
   template:
     metadata:
       name: "{{app}}-{{cluster}}"
+      labels: 
+        app.kubernetes.io/managed-by: argocd 
+        app.kubernetes.io/cluster: "{{cluster}}"
       annotations: 
         argocd.argoproj.io/sync-wave: "{{syncWave}}"
     spec:

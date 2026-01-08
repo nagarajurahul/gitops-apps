@@ -17,6 +17,8 @@ spec:
   template:
     metadata:
       name: "{{app}}-{{cluster}}"
+      annotations: 
+        argocd.argoproj.io/sync-wave: "{{syncWave}}"
     spec:
       project: apps
       destination:

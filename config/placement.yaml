@@ -2,5 +2,6 @@
 - app: quotes-app-nodejs
   namespace: quotes-app-nodejs
   helmLocation: quotes-app-nodejs
+  syncWave: 60
   env: prod
   cluster: in-cluster #us-east-1-prod

@@ -27,7 +27,12 @@ spec:
         targetRevision: main
         path: "{{helmLocation}}"
         helm: 
-          releaseName: "{{app}}"
+          # if you dont set releaseName explicitly
+          # Your Argo CD Application name = Helm release name
+          # Helm sees that the release name contains the chart name
+          # Helm chooses .Release.Name as the resource name
+          # Hence, you can change it, if needed
+          # releaseName: "{{app}}"
           values: | 
             fullnameOverride: "{{app}}"
       syncPolicy:

@@ -5,3 +5,15 @@
   syncWave: 60
   env: prod
   cluster: in-cluster #us-east-1-prod
+- app: goflights
+  namespace: goflights
+  helmLocation: goflights
+  syncWave: 60
+  env: prod
+  cluster: in-cluster #us-east-1-prod
+- app: sql
+  namespace: db
+  helmLocation: sql
+  syncWave: 50
+  env: prod
+  cluster: in-cluster #us-east-1-prod

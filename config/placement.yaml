@@ -1,14 +1,14 @@
 # gitops-apps/config/placement.yaml 
-- app: quotes-app-nodejs
-  namespace: quotes-app-nodejs
-  helmLocation: quotes-app-nodejs
-  syncWave: 60
-  env: prod
-  cluster: in-cluster #us-east-1-prod
 - app: ci-cd-app
   namespace: ci-cd-app
   helmLocation: ci-cd-app
   syncWave: 60
+  env: prod
+  cluster: in-cluster #us-east-1-prod
+- app: sql
+  namespace: db
+  helmLocation: sql
+  syncWave: 50
   env: prod
   cluster: in-cluster #us-east-1-prod
 - app: goflights
@@ -17,9 +17,9 @@
   syncWave: 60
   env: prod
   cluster: in-cluster #us-east-1-prod
-- app: sql
-  namespace: db
-  helmLocation: sql
-  syncWave: 50
+- app: quotes-app-nodejs
+  namespace: quotes-app-nodejs
+  helmLocation: quotes-app-nodejs
+  syncWave: 60
   env: prod
   cluster: in-cluster #us-east-1-prod

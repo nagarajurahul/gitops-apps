@@ -17,7 +17,7 @@ spec:
     - list: 
         elements: 
         # This will be dynamically replaced by clusters in placement.yaml 
-        - cluster: "{{clusters}}"
+          - cluster: "{{clusters}}"
   template:
     metadata:
       name: "{{app}}-{{cluster}}"

@@ -5,6 +5,12 @@
   syncWave: 60
   env: prod
   cluster: in-cluster #us-east-1-prod
+- app: ci-cd-app
+  namespace: ci-cd-app
+  helmLocation: ci-cd-app
+  syncWave: 60
+  env: prod
+  cluster: in-cluster #us-east-1-prod
 - app: goflights
   namespace: goflights
   helmLocation: goflights

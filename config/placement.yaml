@@ -3,5 +3,4 @@
   namespace: ci-cd-app 
   path: ci-cd-app
   env: prod
-  clusters: 
-    - us-east-1-prod
+  cluster: us-east-1-prod

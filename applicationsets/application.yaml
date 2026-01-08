@@ -29,7 +29,7 @@ spec:
       source:
         repoURL: https://github.com/nagarajurahul/helm-charts
         targetRevision: main
-        path: "{{app}}"
+        path: "{{path}}"
       syncPolicy:
         automated:
           prune: true

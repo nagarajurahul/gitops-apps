@@ -1,6 +1,7 @@
 # gitops-apps/config/placement.yaml 
 - app: ci-cd-app 
   namespace: ci-cd-app 
+  path: ci-cd-app
   env: prod
   clusters: 
     - us-east-1-prod

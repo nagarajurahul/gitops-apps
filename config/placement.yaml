@@ -1,6 +1,6 @@
 # gitops-apps/config/placement.yaml 
-- app: ci-cd-app 
-  namespace: ci-cd-app 
-  helmLocation: ci-cd-app
+- app: quotes-app-nodejs
+  namespace: quotes-app-nodejs
+  helmLocation: quotes-app-nodejs
   env: prod
   cluster: in-cluster #us-east-1-prod

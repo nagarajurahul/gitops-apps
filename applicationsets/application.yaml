@@ -14,6 +14,10 @@ spec:
         revision: main
         files:
           - path: config/placement.yaml
+    - list: 
+        elements: 
+        # This will be dynamically replaced by clusters in placement.yaml 
+        - cluster: "{{clusters}}"
   template:
     metadata:
       name: "{{app}}-{{cluster}}"
